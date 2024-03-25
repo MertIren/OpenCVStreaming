@@ -24,7 +24,6 @@ def gen():
 @app.route('/video')
 def video():
     if frame:
-        # if you use `boundary=other_name` then you have to yield `b--other_name\r\n`
         return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
     else:
         return ""
